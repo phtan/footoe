@@ -7,5 +7,4 @@ def convert(your_text):
         None
 
     """
-    print(f"Hello world, I plan to convert the following text: 
-    {your_text}")    
+    print(f"Hello world, I plan to convert the following text: {your_text}")    
