@@ -3,7 +3,7 @@
 Converts text, that has foot-notes, into text with foot-notes - except 
 that the latter foot-notes are numbered in a way I would prefer
 
-## Elaboration
+### Elaboration
 
 I want to do something like the way the Extended Syntax of Markdown 
 handles foot-notes. An example can be seen 
@@ -27,7 +27,7 @@ Here's a foot-note,[^1] and here's another, longer, one.[^longnote]
 And here is the expected output:
 
 ```
-Here's a foot-note,[^1] and here's another, longer, one.[^2]
+Here's a foot-note,[^1] and here's another longer one.[^2]
 
 [^1]: This is the first foot-note.
 
@@ -40,7 +40,7 @@ Here's a foot-note,[^1] and here's another, longer, one.[^2]
 
 Can you spot the difference?
 
-## Motivation
+### Motivation
 
 I tired quickly of numbering foot-notes, in a text-file, myself.
 
