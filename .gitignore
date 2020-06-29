@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Pheng Heong's tinkering
+footoe/cli/
+
 # C extensions
 *.so
 
