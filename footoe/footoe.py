@@ -1,8 +1,21 @@
 import sys
+import argparse
 
 def getTextFromFile():
-    file_name = sys.argv[1] # naively
-  # TODO
+    """
+    self-explanatory.
+    
+    Returns:
+        some_text(str)
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+    "file_name",
+    help="the file containing the text you want to convert/process",
+    type=str
+    )
+    args = parser.parse_args()
+    # TODO
   
 def convert(your_text):
     """
