@@ -15,7 +15,9 @@ def getTextFromFile():
     type=str
     )
     args = parser.parse_args()
-    # TODO
+    
+    f = open(args.file_name, "r")
+    return f.read()
   
 def convert(your_text):
     """
