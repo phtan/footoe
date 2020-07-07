@@ -5,6 +5,7 @@ __pycache__/
 
 # Pheng Heong's tinkering
 footoe/cli/
+hello_world/
 
 # C extensions
 *.so
