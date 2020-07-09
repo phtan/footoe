@@ -1,6 +1,11 @@
 import sys
 import argparse
-import re
+
+from helpers import getAllPreFootnotes, ensureAllUnique
+from helpers import ensureAllPreHasCounterpartAmongPostFootnotes
+from helpers import convertToNumbers, replacePreFootnotesWithNumbers
+from helpers import getMapOfReplacements, getAllPostFootnotes
+from helpers import replacePostFootnotesWithNumbers
 
 def getTextFromFile():
     """
@@ -48,11 +53,9 @@ def convert(your_text):
     ensureAllPreHasCounterpartAmongPostFootnotes(pre) # defensive coding
     numbered = convertToNumbers(pre)
     replacePreFootnotesWithNumbers(your_text, numbered)
-    map = getMapOfReplacements(pre, numbered)
-    
+    a_map = getMapOfReplacements(pre, numbered)
     post = getAllPostFootnotes(your_text)
-    for element in map:
-        replaceAmongPostFootnotes(post, element.old, element.new)
+    replacePostFootnotesWithNumbers(a_map, post)
 
 def writeToFile(converted_text):
      # TODO
