@@ -2,8 +2,12 @@
 helper functions
 """
 
+import re
+
 def getAllPreFootnotes(some_text): # type: (str) -> list
     print("getting all Pre Footnotes...")
+    pattern = r"\[\^([^\]]+)\](?!:)"
+    return re.findall(pattern, some_text) 
     
 def getAllPostFootnotes(some_text): # type: (str) -> list
     print("getting all Post Footnotes...")
