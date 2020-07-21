@@ -49,12 +49,17 @@ def convert(your_text):
     # [^a] and [^b] as Post Footnotes
     
     pre = getAllPreFootnotes(your_text)
+    post = getAllPostFootnotes(your_text)
+    
     ensureAllUnique(pre) # make sure no duplicates occur
+    ensureAllUnique(post)
+    # TODO: update Readme to reflect the above expectation of no duplicates
     ensureAllPreHasCounterpartAmongPostFootnotes(pre) # defensive coding
+    
     numbered = convertToNumbers(pre)
     replacePreFootnotesWithNumbers(your_text, numbered)
     a_map = getMapOfReplacements(pre, numbered)
-    post = getAllPostFootnotes(your_text)
+    
     replacePostFootnotesWithNumbers(a_map, post)
 
 def writeToFile(converted_text):
