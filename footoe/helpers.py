@@ -4,9 +4,11 @@ helper functions
 
 import re
 
+ERROR_MESSAGE_NO_DUPLICATES = "the given list should not have duplicates"
+
 def getAllPreFootnotes(some_text): # type: (str) -> list
     print("getting all Pre Footnotes...")
-    pattern = r"\[\^([^\]]+)\](?!:)"
+    pattern = r"\[\^([^\]]+)\](?!:)" # exclude the character ":" (i.e. colon)
     return re.findall(pattern, some_text) 
     
 def getAllPostFootnotes(some_text): # type: (str) -> list
@@ -14,6 +16,11 @@ def getAllPostFootnotes(some_text): # type: (str) -> list
 
 def ensureAllUnique(some_list): # type: (list) -> None
     print("Ensuring unique-ness among Pre Footnotes...")
+    
+    # A set, in Python, can only have non-duplicates.
+    # So we cast some_list into a set, then check if the resulting
+    # set has the same number of items/entries as the original list.
+    assert len(set(some_list)) == len(some_list), ERROR_MESSAGE_NO_DUPLICATES
 
 def ensureAllPreHasCounterpartAmongPostFootnotes(some_list): # type: (list) -> None
     print("Ensuring a counterpart, for each Pre, among the Post Footnotes...")
