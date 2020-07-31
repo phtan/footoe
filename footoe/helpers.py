@@ -50,5 +50,15 @@ def mapFootnotesToNumbers(some_list): # type: (list) -> dictionary
     
 def replaceFootnotesWithNumbers(some_text, some_map): # type: (str, dictionary) -> str
     print("Replacing footnotes with numbers...")
-
+    temp = some_text
+    replaced_footnotes = ""
     
+    for fn, num in some_map.items():
+        replaced_footnotes = temp.replace(buildFootnote(fn), buildFootnote(num))
+        temp = replaced_footnotes # carry over the replacements from one iteration to the next
+        
+    return replaced_footnotes
+    
+def buildFootnote(some_text): # type: (str) -> str
+    output = "[^" + some_text + "]"
+    return output

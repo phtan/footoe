@@ -110,5 +110,11 @@ class TestHelpers(unittest.TestCase):
         
         self.assertEqual(expected, actual)
         
+    def test_build_footnote(self):
+        fn = "foo"
+        expected = "[^foo]"
+        actual = h.buildFootnote(fn)
+        self.assertEqual(expected, actual)
+        
 if __name__ == "__main__":
     unittest.main()
