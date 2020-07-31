@@ -54,7 +54,7 @@ def convert(your_text):
     ensureAllUnique(pre) # make sure no duplicates occur
     ensureAllUnique(post)
     # TODO: update Readme to reflect the above expectation of no duplicates
-    ensureAllPreHasCounterpartAmongPostFootnotes(pre) # defensive coding
+    ensureAllPreHasCounterpartAmongPostFootnotes(pre, post) # defensive coding
     
     numbered = convertToNumbers(pre)
     replacePreFootnotesWithNumbers(your_text, numbered)

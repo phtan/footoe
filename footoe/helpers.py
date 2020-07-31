@@ -5,6 +5,7 @@ helper functions
 import re
 
 ERROR_MESSAGE_NO_DUPLICATES = "the given list should not have duplicates"
+ERROR_MESSAGE_SHOULD_HAVE_COUNTERPART = "the two given lists should contain the same elements/footnotes"
 
 def getAllPreFootnotes(some_text): # type: (str) -> list
     print("getting all Pre Footnotes...")
@@ -13,6 +14,8 @@ def getAllPreFootnotes(some_text): # type: (str) -> list
     
 def getAllPostFootnotes(some_text): # type: (str) -> list
     print("getting all Post Footnotes...")
+    pattern = r"\[\^([^\]]+)\]:"
+    return re.findall(pattern, some_text)
 
 def ensureAllUnique(some_list): # type: (list) -> None
     print("Ensuring unique-ness among Pre Footnotes...")
@@ -22,8 +25,9 @@ def ensureAllUnique(some_list): # type: (list) -> None
     # set has the same number of items/entries as the original list.
     assert len(set(some_list)) == len(some_list), ERROR_MESSAGE_NO_DUPLICATES
 
-def ensureAllPreHasCounterpartAmongPostFootnotes(some_list): # type: (list) -> None
+def ensureAllPreHasCounterpartAmongPostFootnotes(some_list, another_list): # type: (list, list) -> None
     print("Ensuring a counterpart, for each Pre, among the Post Footnotes...")
+    assert some_list == another_list, ERROR_MESSAGE_SHOULD_HAVE_COUNTERPART
 
 def convertToNumbers(some_list): # type: (list) -> list
     print("Numbering Pre Footnotes...")
