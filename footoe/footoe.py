@@ -31,7 +31,7 @@ def convert(your_text):
     Args:
         your_text (str): a certain text
     Returns:
-        None
+        str
 
     """
     print(f"Hello world, I plan to convert the following text: {your_text}")
@@ -54,13 +54,14 @@ def convert(your_text):
     ensureAllUnique(pre) # make sure no duplicates occur
     ensureAllUnique(post)
     # TODO: update Readme to reflect the above expectation of no duplicates
+    
     ensureAllPreHasCounterpartAmongPostFootnotes(pre, post) # defensive coding
     
-    numbered = convertToNumbers(pre)
-    replacePreFootnotesWithNumbers(your_text, numbered)
-    a_map = getMapOfReplacements(pre, numbered)
+    a_map = mapFootnotesToNumbers(pre) # I suppose either pre or post would work as an argument, given the checks above
     
-    replacePostFootnotesWithNumbers(a_map, post)
+    converted_text = replaceFootnotesWithNumbers(a_map, your_text)
+    
+    return converted_text
 
 def writeToFile(converted_text):
      # TODO

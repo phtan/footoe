@@ -29,7 +29,8 @@ def ensureAllPreHasCounterpartAmongPostFootnotes(some_list, another_list): # typ
     print("Ensuring a counterpart, for each Pre, among the Post Footnotes...")
     assert some_list == another_list, ERROR_MESSAGE_SHOULD_HAVE_COUNTERPART
 
-def convertToNumbers(some_list): # type: (list) -> list
+def mapFootnotesToNumbers(some_list): # type: (list) -> ??? # TODO replace ??? with my choice of data structure for a map
+
     print("Numbering Pre Footnotes...")
     # Initialise
     output = []
@@ -40,10 +41,12 @@ def convertToNumbers(some_list): # type: (list) -> list
     
     # now iterate over the given list
     for i in some_list:
-        output.append(str(count))
-        # TODO updateMapOfReplacements(i, str(count)) # This anticipates a call of the method/function getMapOfReplacements
+        number = str(count)
+        output.append(number)
+        # TODO updateMapOfReplacements(i, number) # This anticipates the statement of "return", at the end of this function.
         count += step
-    return output
+    
+    # TODO return a map, possibly implemented as a dictionary
     
 def replacePreFootnotesWithNumbers(some_text, some_list): # type: (str, list) ->  None
     print("Replacing Pre Footnotes with numbers...")
