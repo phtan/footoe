@@ -31,6 +31,18 @@ def ensureAllPreHasCounterpartAmongPostFootnotes(some_list, another_list): # typ
 
 def convertToNumbers(some_list): # type: (list) -> list
     print("Numbering Pre Footnotes...")
+    # Initialise
+    output = []
+    count = 1
+    
+    # Here's a "magic constant"
+    step = 1
+    
+    # now iterate over the given list
+    for i in some_list:
+        output.append(str(count))
+        count += step
+    return output
     
 def replacePreFootnotesWithNumbers(some_text, some_list): # type: (str, list) ->  None
     print("Replacing Pre Footnotes with numbers...")

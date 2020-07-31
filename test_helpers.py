@@ -81,6 +81,14 @@ class TestHelpers(unittest.TestCase):
             h.ensureAllPreHasCounterpartAmongPostFootnotes(list2_of_pre, list3_of_post)
         except:
             self.fail("Shouldn't have an Exception")
-            
+    
+    def test_convert_to_numbers(self):
+        sample_list = ["a", "b"]
+        expected = ["1", "2"]
+        actual = h.convertToNumbers(sample_list)
+        self.assertEqual(expected, actual)
+        
+        # TODO test with an input of empty list (defensive coding)
+        
 if __name__ == "__main__":
     unittest.main()
