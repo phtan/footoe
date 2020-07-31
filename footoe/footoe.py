@@ -57,9 +57,9 @@ def convert(your_text):
     
     ensureAllPreHasCounterpartAmongPostFootnotes(pre, post) # defensive coding
     
-    a_map = mapFootnotesToNumbers(pre) # I suppose either pre or post would work as an argument, given the checks above
+    a_map = mapFootnotesToNumbers(pre) # I suppose either Pre Footnotes or Post Footnotes would work as an argument, given the checks above
     
-    converted_text = replaceFootnotesWithNumbers(a_map, your_text)
+    converted_text = replaceFootnotesWithNumbers(your_text, a_map)
     
     return converted_text
 

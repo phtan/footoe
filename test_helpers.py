@@ -82,10 +82,32 @@ class TestHelpers(unittest.TestCase):
         except:
             self.fail("Shouldn't have an Exception")
     
-    def test_convert_to_numbers(self): # TODO delete this test
-        sample_list = ["a", "b"]
-        expected = ["1", "2"]
-        actual = h.convertToNumbers(sample_list)
+    def test_map_of_replacements_is_accurate(self):
+        fn = ["first", "second"]
+        expected = {
+            "first": "1",
+            "second": "2" 
+        }
+        actual = h.mapFootnotesToNumbers(fn)
+        
+        self.assertEqual(expected, actual)
+        
+        # just out of curiosity
+        fn2 = []
+        expected2 = {}
+        actual2 = h.mapFootnotesToNumbers(fn2)
+        self.assertEqual(expected2, actual2)
+        
+    def test_replace(self):
+        sample_text = "Here is one [^alpha] and two [^beta] \n\n [^alpha]: hello \n\n [^beta]: world"
+        sample_map = {
+            "alpha": "1",
+            "beta": "2" 
+        }
+        
+        expected = "Here is one [^1] and two [^2] \n\n [^1]: hello \n\n [^2]: world"
+        actual = h.replaceFootnotesWithNumbers(sample_text, sample_map)
+        
         self.assertEqual(expected, actual)
         
 if __name__ == "__main__":

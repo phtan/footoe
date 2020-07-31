@@ -29,12 +29,13 @@ def ensureAllPreHasCounterpartAmongPostFootnotes(some_list, another_list): # typ
     print("Ensuring a counterpart, for each Pre, among the Post Footnotes...")
     assert some_list == another_list, ERROR_MESSAGE_SHOULD_HAVE_COUNTERPART
 
-def mapFootnotesToNumbers(some_list): # type: (list) -> ??? # TODO replace ??? with my choice of data structure for a map
+def mapFootnotesToNumbers(some_list): # type: (list) -> dictionary
 
-    print("Numbering Pre Footnotes...")
+    print("Mapping footnotes to numbers...")
     # Initialise
-    output = []
+    output = {} # an empty dictionary
     count = 1
+    
     
     # Here's a "magic constant"
     step = 1
@@ -42,21 +43,12 @@ def mapFootnotesToNumbers(some_list): # type: (list) -> ??? # TODO replace ??? w
     # now iterate over the given list
     for i in some_list:
         number = str(count)
-        output.append(number)
-        # TODO updateMapOfReplacements(i, number) # This anticipates the statement of "return", at the end of this function.
+        output[i] = number
         count += step
     
-    # TODO return a map, possibly implemented as a dictionary
+    return output
     
-def replacePreFootnotesWithNumbers(some_text, some_list): # type: (str, list) ->  None
-    print("Replacing Pre Footnotes with numbers...")
-    
-def getMapOfReplacements(some_list, list_of_numbers): # type: (list, list) -> dict
-    print("Getting a map of replacements among Pre Footnotes...")
-
-def replacePostFootnotesWithNumbers(some_dict, some_list): # type: (dict, list) -> None
-    print("Replacing Post Footnotes with numbers...")
-    # for element in some_dict:
-    #    replaceAmongPostFootnotes(some_list, element.old, element.new)
+def replaceFootnotesWithNumbers(some_text, some_map): # type: (str, dictionary) -> str
+    print("Replacing footnotes with numbers...")
 
     
