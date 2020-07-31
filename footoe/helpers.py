@@ -41,6 +41,7 @@ def convertToNumbers(some_list): # type: (list) -> list
     # now iterate over the given list
     for i in some_list:
         output.append(str(count))
+        # TODO updateMapOfReplacements(i, str(count)) # This anticipates a call of the method/function getMapOfReplacements
         count += step
     return output
     
