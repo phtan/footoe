@@ -45,12 +45,11 @@ Can you spot the difference?
 I tired quickly of numbering foot-notes, in a text-file, myself.
 
 If I had Foot-note Number 1 and Foot-note Number 2, and I suddenly
-wanted to add a foot-note in between them, I had to re-number Foot-note
-Number 2 to Foot-note Number 3, so that I could make room for a new(er)
-Foot-note Number 2.
+wanted to add a foot-note in between them, I had to make room for a new(er)
+Foot-note Number 2. So I have to re-number the old(er) Foot-note
+Number 2 to Foot-note Number 3. 
 
 So, I thought, if I could give, to these foot-notes, any arbitrary 
-number - or indeed, any alpha-numeric combination (even the same 
-combination across foot-notes) - how nice would it be if a program could
+number - or indeed, any alpha-numeric combination - how nice would it be if a program could
 number these for me: starting from the number 1 to the final number that
 represents the last foot-note in the text I have written.
