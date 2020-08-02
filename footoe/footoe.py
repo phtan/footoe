@@ -5,7 +5,7 @@ import helpers as h
 
 # "Magic" constants
 OUTPUT_NAME = "footoe_output.txt" # TODO let the user decide this, through an argument to the command-line program
-FILE_WRITING_MODE = "x"
+FILE_WRITING_MODE = "w"
 
 def getTextFromFile():
     """
@@ -34,7 +34,7 @@ def convert(your_text):
         str
 
     """
-    print(f"Hello world, I plan to convert the following text: {your_text}")
+    # print(f"Hello world, I plan to convert the following text: {your_text}")
     
     ### Terminology
     # Given a four-line text that looks like the (somewhat mal-formed)
@@ -67,6 +67,8 @@ def writeToFile(converted_text):
     some_file = open(OUTPUT_NAME, FILE_WRITING_MODE)
     some_file.write(converted_text)
     some_file.close()
+    
+    print(f"I wrote to {OUTPUT_NAME}.")
     
 def main():
     text = getTextFromFile()

@@ -17,11 +17,6 @@ Here's a foot-note,[^1] and here's another, longer, one.[^longnote]
 [^1]: This is the first foot-note.
 
 [^longnote]: This is the second foot-note.
-
-    To include paragraphs in the foot-note, you can indent them.
-	
-	You can have as many paragraphs as you desire.
-
 ```
 
 And here is the expected output:
@@ -31,11 +26,7 @@ Here's a foot-note,[^1] and here's another longer one.[^2]
 
 [^1]: This is the first foot-note.
 
-[^2]: This is the second foot-note.
-
-    To include paragraphs in the foot-note, you can indent them.
-	
-	You can have as many paragraphs as you desire.
+[^2]: This is the second foot-note. 
 ```
 
 Can you spot the difference?
