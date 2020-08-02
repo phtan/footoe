@@ -54,6 +54,7 @@ def replaceFootnotesWithNumbers(some_text, some_map): # type: (str, dictionary) 
     replaced_footnotes = ""
     
     for fn, num in some_map.items():
+        # we use buildFootnote; replace only what looks like a footnote
         replaced_footnotes = temp.replace(buildFootnote(fn), buildFootnote(num))
         temp = replaced_footnotes # carry over the replacements from one iteration to the next
         

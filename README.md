@@ -40,6 +40,17 @@ Here's a foot-note,[^1] and here's another longer one.[^2]
 
 Can you spot the difference?
 
+### Installation
+
+I assume you have Python set up, and optionally, Git Bash (if you are using the operating system Windows). 
+Here is how you can operate the program in Windows:
+
+0. Get a copy of the program. In your Git Bash (or similar), run: `git clone https://github.com/phtan/footoe.git`
+0. Now open a Command Prompt instead of Git Bash
+0. Navigate to the directory that you downloaded in Step 1 above. 
+For example, by running: `cd footoe`
+0. `python .\footoe\footoe.py -h`
+
 ### Motivation
 
 I tired quickly of numbering foot-notes, in a text-file, myself.

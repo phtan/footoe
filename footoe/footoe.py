@@ -4,7 +4,7 @@ import argparse
 import helpers as h
 
 # "Magic" constants
-OUTPUT_NAME = "footoe_output.txt"
+OUTPUT_NAME = "footoe_output.txt" # TODO let the user decide this, through an argument to the command-line program
 FILE_WRITING_MODE = "x"
 
 def getTextFromFile():
@@ -53,7 +53,6 @@ def convert(your_text):
     
     h.ensureAllUnique(pre) # make sure no duplicates occur
     h.ensureAllUnique(post)
-    # TODO: update Readme to reflect the above expectation of no duplicates
     
     h.ensureAllPreHasCounterpartAmongPostFootnotes(pre, post) # defensive coding
     
@@ -65,7 +64,7 @@ def convert(your_text):
 
 def writeToFile(converted_text):
     
-    some_file = open(OUTPUT_NAME, FILE_WRITING_MODE) # TODO out of curiosity, change FILE_WRITING_MODE to "a"; and also find out what "w" does
+    some_file = open(OUTPUT_NAME, FILE_WRITING_MODE)
     some_file.write(converted_text)
     some_file.close()
     
