@@ -32,19 +32,18 @@ def ensureAllPreHasCounterpartAmongPostFootnotes(some_list, another_list): # typ
 def mapFootnotesToNumbers(some_list): # type: (list) -> dictionary
 
     # print("Mapping footnotes to numbers...")
+    
     # Initialise
     output = {} # an empty dictionary
-    count = 1
     
-    
-    # Here's a "magic constant"
-    step = 1
-    
-    # now iterate over the given list
-    for i in some_list:
-        number = str(count)
-        output[i] = number
-        count += step
+    # Use Dictionary/List Comprehension
+    #
+    # e.g.
+    # >>> d = {n: n**2 for n in range(5)}
+    # >>> print d
+    # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}    
+   
+    output = {some_list[n]: str(n+1) for n in range(len(some_list))}
     
     return output
     
