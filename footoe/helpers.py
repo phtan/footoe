@@ -35,6 +35,7 @@ def mapFootnotesToNumbers(some_list): # type: (list) -> dictionary
     
     # Initialise
     output = {} # an empty dictionary
+    numbers = range(1, len(some_list)+1) # the function, "range", gives me a zero-based list
     
     # Use Dictionary/List Comprehension
     #
@@ -43,7 +44,7 @@ def mapFootnotesToNumbers(some_list): # type: (list) -> dictionary
     # >>> print d
     # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}    
    
-    output = {some_list[n]: str(n+1) for n in range(len(some_list))}
+    output = {some_list[n-1]: str(n) for n in numbers} # e.g. {some_list[0]: "1"}
     
     return output
     
