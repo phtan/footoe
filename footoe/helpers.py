@@ -35,7 +35,7 @@ def mapFootnotesToNumbers(some_list): # type: (list) -> dictionary
     
     # Initialise
     output = {} # an empty dictionary
-    numbers = range(1, len(some_list)+1) # the function, "range", gives me a zero-based list
+    numbers = range(1, len(some_list)+1) # override the default starting number (that is, zero)
     
     # Use Dictionary/List Comprehension
     #
