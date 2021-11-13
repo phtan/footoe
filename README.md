@@ -1,7 +1,7 @@
 # footoe
 
-Converts text that has foot-notes, into text that has foot-notes - except 
-that the latter foot-notes are numbered in a way I would prefer
+A toy program that numbers foot-notes in 
+a way I would prefer
 
 ### Motivation
 
